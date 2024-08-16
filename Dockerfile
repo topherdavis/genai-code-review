@@ -2,7 +2,7 @@
 FROM python:3.12
 
 # Set the working directory inside the container
-WORKDIR /app
+# WORKDIR /app
 
 # Copy the requirements file to the container
 COPY requirements.txt .
@@ -17,4 +17,4 @@ COPY . .
 ENV PYTHONPATH="${PYTHONPATH}:/app/src"
 
 # Set the command to execute the main Python script
-CMD ["python", "/app/src/main.py"]
+CMD ["python", "src/main.py"]
