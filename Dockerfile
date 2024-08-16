@@ -2,7 +2,7 @@
 FROM python:3.12
 
 # Set the working directory inside the container
-# WORKDIR /app
+WORKDIR /github/workspace
 
 # Copy the requirements file to the container
 COPY requirements.txt .
@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Add the src directory to the PYTHONPATH
-ENV PYTHONPATH="${PYTHONPATH}:/app/src"
+ENV PYTHONPATH="${PYTHONPATH}:/github/workspace/src"
 
 # Set the command to execute the main Python script
 CMD ["python", "src/main.py"]
